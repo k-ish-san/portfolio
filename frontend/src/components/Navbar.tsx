@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {Link} from "react-router-dom"
 import {Tooltip} from "react-tooltip";
 import { Menu, X } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
@@ -21,16 +22,16 @@ const Navbar: React.FC = () =>
     <nav className="dark:bg-gray-900 dark:text-white shadow-md font-sans">
       <div className="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
         {/* Logo / Brand */}
-        <div className=" font-bold text-orange-500"></div>
+        <div className=" font-bold text-3xl font-mono">Portfolio</div>
 
         {/* Desktop Menu */}
         <ul
-          className="hidden md:flex space-x-4 text-xl"
-          style={{ fontVariant: "small-caps" }}
+          className="hidden md:flex space-x-4 text-2xl font-mono"
+          style={{ fontVariant: "small-caps", letterSpacing: "0.1em" }}
         >
           <li>
-            <a
-              href="#home"
+            <Link
+              to="/home"
               className=" px-3 py-2 rounded-md font-medium "
               data-tooltip-id="home-tooltip"
               data-tooltip-content="Home"
@@ -38,11 +39,11 @@ const Navbar: React.FC = () =>
             >
               <HomeIcon className="inline-block w-6 h-6 mr-1 mb-1 " />
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#about"
+            <Link 
+              to="/about"
               className="px-3 py-2 rounded-md font-medium"
               data-tooltip-id="about-tooltip"
               data-tooltip-content="About"
@@ -50,11 +51,11 @@ const Navbar: React.FC = () =>
             >
               <UserIcon className="inline-block w-6 h-6 mr-1 mb-1" />
               About
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#projects"
+            <Link
+              to="/projects"
               className=" px-3 py-2 rounded-md font-medium"
               data-tooltip-id="projects-tooltip"  
               data-tooltip-content="Projects"
@@ -62,12 +63,12 @@ const Navbar: React.FC = () =>
             >
               <BookOpenIcon className="inline-block w-6 h-6 mr-1 mb-1 " />
               Projects
-            </a>
+            </Link>
           </li>
 
           <li>
-            <a
-              href="#contact"
+            <Link
+              to="/contact"
               className=" px-3 py-2 rounded-md font-medium"
               data-tooltip-id="contact-tooltip"
               data-tooltip-content="Contact"  
@@ -75,7 +76,7 @@ const Navbar: React.FC = () =>
             >
               <PhoneIcon className="inline-block w-6 h-6 mr-1 mb-1" />
               Contact
-            </a>
+            </Link>
           </li>
           <li>
             <ThemeToggle />
@@ -99,36 +100,36 @@ const Navbar: React.FC = () =>
       {isOpen && (
         <ul className="md:hidden  px-4 pb-4 space-y-2">
           <li>
-            <a
-              href="#home"
+            <Link
+              to="/home"
               className="block px-3 py-2 rounded-md font-medium"
             >
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#about"
+            <Link
+              to="/about"
               className="block  px-3 py-2 rounded-md font-medium"
             >
               About
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#projects"
+            <Link
+              to="/projects"
               className="block  px-3 py-2 rounded-md font-medium"
             >
               Projects
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#contact"
+            <Link
+              to="/contact"
               className="block  px-3 py-2 rounded-md font-medium"
             >
               Contact
-            </a>
+            </Link>
           </li>
           <li className="ml-3 ">
             <ThemeToggle />

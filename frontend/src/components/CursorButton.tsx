@@ -15,7 +15,7 @@ function CursorButton () {
   return (
     <div>
       <button
-        className=" fixed bottom-5 right-5 pl-2 pt-2 bg-purple-600 text-white hover:bg-indigo-800   shadow-lg rounded-xl "
+        className=" fixed bottom-5 right-5 pl-2 pt-2 bg-purple-600 text-white hover:bg-indigo-800   shadow-lg rounded-xl z-30 "
         onClick={toggleVisibility}
         data-tooltip-id="cursor-tooltip"
         data-tooltip-content={
@@ -25,7 +25,7 @@ function CursorButton () {
       >
         <div className="relative h-12 w-12  ">
           <svg
-            className="absolute inset-0 z-20 "
+            className="absolute inset-0 z-30 "
             width="48"
             height="48"
             viewBox="0 0 48 48"
@@ -54,7 +54,7 @@ function CursorButton () {
             />
           </svg>
           {isVisible ? (
-            <SparklesIcon className="absolute right-6 top-0 h-6 w-6 text-white z-0" />
+            <SparklesIcon className="absolute right-6 top-0 h-6 w-6 text-white z-20" />
           ) : (
             ""
           )}
