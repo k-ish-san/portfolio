@@ -1,12 +1,12 @@
-import Typewriter from "typewriter-effect";
+// import Typewriter from "typewriter-effect";
 import Waves from "../components/Waves";
 
 function Home() {
   return (
-    <div className="relative flex flex-col items-center justify-center h-screen light:bg-gray-100 dark:bg-black overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none">
+    <div className="relative flex flex-col items-center justify-center h-screen light:bg-gray-100 dark:bg-black overflow-hidden " style={{zIndex: -1}} >
+      <div className="absolute inset-0 pointer-events-none" >
         <Waves
-          lineColor="#fff"
+          lineColor="#093d74"
           backgroundColor="rgba(255, 255, 255, 0.2)"
           waveSpeedX={0.02}
           waveSpeedY={0.01}
@@ -19,7 +19,7 @@ function Home() {
           yGap={36}
         />
       </div>
-      <div className="text-5xl font-bold dark:text-white light:text-gray-800 mb-4">
+      {/* <div className="text-5xl font-bold dark:text-white light:text-gray-800 mb-4">
         <Typewriter
           options={{
             strings: [
@@ -32,7 +32,7 @@ function Home() {
             deleteSpeed: 50,
           }}
         />
-      </div>
+      </div> */}
     </div>
   );
 }
