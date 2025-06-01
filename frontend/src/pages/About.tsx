@@ -26,6 +26,7 @@ import {
   SiRedux,
 
 } from "react-icons/si";
+import ThemeToggle from "../components/ThemeToggle";
 
 const skills = [
   { icon: <SiHtml5 />, label: "HTML" },
@@ -71,25 +72,27 @@ const About = () => {
           Professional <span className="text-indigo-700">Skillset</span>
         </SectionTitle>
         <SkillGrid skills={skills} />
-           <div className="mb-8"></div>
+        <div className="mb-8"></div>
         <SectionTitle>
           <span className="text-indigo-700">Tools</span> I use
         </SectionTitle>
         <SkillGrid skills={tools} />
-      </div>
 
-      <div className="flex flex-col items-center justify-center light:bg-white dark:bg-black light:text-black dark:text-white ">
-        <SectionTitle>
-          Days I <span className="text-indigo-700">Code</span>
-        </SectionTitle>
-        <div className="w-full max-w-4xl px-4">
-          <GitHubCalendar
-            username="k-ish-san"
-            blockSize={15}
-            blockMargin={5}
-            color="#c084f5"
-            fontSize={16}
-          />
+        <div className="w-full px-4 py-12 font-mono light:bg-white dark:bg-black light:text-black dark:text-white flex flex-col items-center">
+          <SectionTitle>
+            Days I <span className="text-indigo-700">Code</span>
+          </SectionTitle>
+          <div className="w-full max-w-4xl px-4">
+            <GitHubCalendar
+              username="k-ish-san"
+              blockSize={15}
+              blockMargin={5}
+              fontSize={16}
+              colorScheme={
+                document.documentElement.classList.contains("dark") ? "dark" : "light"
+              }
+            />
+          </div>
         </div>
       </div>
     </div>

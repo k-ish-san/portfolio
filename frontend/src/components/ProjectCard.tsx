@@ -17,7 +17,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   github,
   live,
 }) => (
-  <div className="dark:bg-gray-300 light:bg-gray-100 dark:text-white light:text-black rounded-xl shadow-md p-4 flex flex-col h-full transition-transform hover:scale-[1.03]">
+  <div className="dark:bg-gradient-to-r from-gray-900 to-indigo-900 light:bg-gray-100 dark:text-white light:text-black rounded-xl shadow-md p-4 flex flex-col h-full transition-transform hover:scale-[1.03]">
     <img
       src={image}
       alt={title}
