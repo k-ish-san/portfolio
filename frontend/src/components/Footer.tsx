@@ -10,7 +10,7 @@ import {
 
 const Footer: React.FC = () => {
   return (
-    <div className="light:bg-white dark:bg-black">
+    <div className="light:bg-white dark:bg-black pt-8">
       <div className=" max-w-6xl w-full mx-auto flex flex-col md:flex-row items-center justify-center gap-8">
         {/* Social Links */}
         <div className="text-center md:text-left">
