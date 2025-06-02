@@ -92,7 +92,7 @@ const Navbar: React.FC = () => {
         <div className="flex justify-around items-center h-16" style={{fontVariant: "small-caps", letterSpacing: "0.1em" }} >
           {/* Home */}
           <Link
-            to="/home"
+            to="/"
             className={`flex flex-col items-center justify-center w-full h-full transition-transform duration-200 ${
               activeLink === "/home" ? "scale-125" : "scale-100"
             }hover:scale-110 hover:bg-indigo-500`}

@@ -27,14 +27,14 @@ const ThemeToggle = () => {
           <SunIcon
             className="h-6 w-6 text-amber-400"
             data-tooltip-id="light-tooltip"
-            data-tooltip-content="Light Mode"
+            data-tooltip-content="Light"
             data-tooltip-place="bottom"
           />
         ) : (
           <MoonIcon
             className="h-6 w-6 text-black"
             data-tooltip-id="dark-tooltip"
-            data-tooltip-content="Dark Mode"
+            data-tooltip-content="Dark"
             data-tooltip-place="bottom"
           />
         )}
@@ -44,5 +44,6 @@ const ThemeToggle = () => {
     </div>
   );
 };
+
 
 export default ThemeToggle;

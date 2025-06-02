@@ -54,7 +54,7 @@ const ContactPage: React.FC = () => {
       {/* Glassmorphism Card */}
       <div className="max-w-4xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Contact Form */}
-        <div className="rounded-2xl p-8 shadow-xl dark:bg-white/10 backdrop-blur-sm border dark:border-white/20 bg-clip-padding">
+        <div className="rounded-2xl p-8 shadow-xl border dark:border-white/20 bg-clip-padding">
           <h2 className="text-3xl font-bold mb-6">Contact Me</h2>
           {isSubmitted ? (
             <div className="text-center py-8">
@@ -191,7 +191,7 @@ const ContactPage: React.FC = () => {
         </div>
 
         {/* Contact Info & Socials */}
-        <div className="rounded-2xl p-8 shadow-xl dark:bg-white/10 dark:backdrop-blur-sm border dark:border-white/20 bg-clip-padding flex flex-col justify-between">
+        <div className="rounded-2xl p-8 shadow-xl dark:bg-white/10 border dark:border-white/20 bg-clip-padding flex flex-col justify-between">
           <div>
             <h2 className="text-3xl font-bold mb-6">Get In Touch</h2>
             <div className="space-y-4">
@@ -234,8 +234,6 @@ const ContactPage: React.FC = () => {
               </a>
             </div>
           </div>
-
-         
 
           {/* Google Maps Integration */}
           <div className="mt-8 rounded-lg overflow-hidden h-48">
