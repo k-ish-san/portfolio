@@ -86,7 +86,7 @@ const ContactPage: React.FC = () => {
                   <button
                     type="button"
                     onClick={nextStep}
-                    className="w-full py-3 px-4 bg-indigo-600 hover:bg-indigo-700 rounded-lg font-medium transition-colors"
+                    className="w-full py-3 px-4 bg-indigo-600 hover:bg-indigo-700 rounded-lg light:text-white font-medium transition-colors"
                   >
                     Next
                   </button>
@@ -165,7 +165,7 @@ const ContactPage: React.FC = () => {
                       onChange={handleChange}
                       required
                       rows={5}
-                      className="w-full p-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/50"
+                      className="w-full p-3 rounded-lg dark:bg-white/20 border dark:border-white/30 dark:text-white placeholder-white/50"
                       placeholder="Your message..."
                     />
                   </div>
@@ -173,13 +173,13 @@ const ContactPage: React.FC = () => {
                     <button
                       type="button"
                       onClick={prevStep}
-                      className="w-1/2 py-3 px-4 dark:bg-gray-600 dark:hover:bg-gray-700 rounded-lg font-medium transition-colors"
+                      className="w-1/2 py-3 px-4 bg-gray-600 dark:hover:bg-gray-700 light:text-white rounded-lg font-medium transition-colors"
                     >
                       Back
                     </button>
                     <button
                       type="submit"
-                      className="w-1/2 py-3 px-4 bg-indigo-600 hover:bg-indigo-700 rounded-lg font-medium transition-colors"
+                      className="w-1/2 py-3 px-4 bg-indigo-600 hover:bg-indigo-700 rounded-lg light:text-white font-medium transition-colors"
                     >
                       Submit
                     </button>
