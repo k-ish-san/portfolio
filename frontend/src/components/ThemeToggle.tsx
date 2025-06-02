@@ -21,7 +21,7 @@ const ThemeToggle = () => {
     <div>
       <button
         onClick={toggleTheme}
-        className="p-2 rounded-full light:bg-black dark:bg-white  transition-colors duration-300"
+        
       >
         {theme === "dark" ? (
           <SunIcon
@@ -32,7 +32,7 @@ const ThemeToggle = () => {
           />
         ) : (
           <MoonIcon
-            className="h-6 w-6 text-white"
+            className="h-6 w-6 text-black"
             data-tooltip-id="dark-tooltip"
             data-tooltip-content="Dark Mode"
             data-tooltip-place="bottom"

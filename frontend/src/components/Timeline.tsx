@@ -59,7 +59,7 @@ const Timeline: React.FC<TimelineProps> = ({ events }) => {
     >
       {/* Vertical Timeline Line: Only between first and last dot */}
       <div
-        className="absolute left-8 md:left-1/2 w-1 md:w-0.5px bg-gray-300 transition-all duration-500"
+        className="absolute left-8 md:left-1/2 w-0.5 md:w-0.5px bg-gray-300 transition-all duration-500"
         style={{
           top: lineStyle.top,
           height: lineStyle.height,
@@ -67,7 +67,7 @@ const Timeline: React.FC<TimelineProps> = ({ events }) => {
       ></div>
       {/* Colored (active) timeline line */}
       <div
-        className="absolute left-8 md:left-1/2 w-1 md:w-0.5px bg-indigo-500 transition-all duration-500 ease-in-out"
+        className="absolute left-8 md:left-1/2 w-0.5 md:w-0.5px bg-indigo-500 transition-all duration-500 ease-in-out"
         style={{
           top: lineStyle.top,
           height: lineStyle.height * ((activeIndex + 2) / events.length),
@@ -88,7 +88,7 @@ const Timeline: React.FC<TimelineProps> = ({ events }) => {
 
           {/* Horizontal connector (mobile only) */}
           <div
-            className="absolute left-[1.25rem] md:hidden w-20 h-1 top-3 bg-gray-300"
+            className="absolute left-[1.25rem] md:hidden w-20 h-0.5 top-3 "
             style={{ zIndex: 0 }}
           ></div>
 
@@ -99,24 +99,24 @@ const Timeline: React.FC<TimelineProps> = ({ events }) => {
                 index % 2 === 1
                   ? "left-[calc(50%-3rem)] "
                   : "right-[calc(50%-3rem)]"
-              } top-3 w-[50%] h-1 bg-gray-300 z-0`}
+              } top-3 w-[50%] h-0.5 bg-indigo-500 z-0`}
               style={{ zIndex: 0 }}
             ></div>
           )}
 
           {/* Event card */}
           <div
-            className={`mt-2 md:-mt-2 ml-16 md:ml-0 md:w-5/12 px-6 py-4 rounded-lg shadow-sm bg-white dark:bg-gradient-to-r from-indigo-500 to-indigo-300 ${
+            className={`mt-2 md:-mt-2 ml-16 md:ml-0 md:w-5/12 px-6 py-4 rounded-lg shadow-xl border-2 light:border-black/20 dark:border-white/20 light:bg-blue-50 dark:bg-gradient-to-r from-indigo-900 to-purple-900  ${
               index % 2 === 0
                 ? "md:mr-auto md:pr-14 md:pl-8"
                 : "md:ml-auto md:pl-14 md:pr-8"
             }`}
             style={{ zIndex: 1 }}
           >
-            <div className="font-bold text-indigo-900 text-lg">
+            <div className="font-bold light:text-indigo-900 dark:text-indigo-300 text-lg">
               {event.date}
             </div>
-            <h3 className="text-lg font-semibold text-indigo-900 mb-1">
+            <h3 className="text-lg font-semibold light:text-indigo-900 dark:text-violet-300 mb-1">
               {event.title}
             </h3>
             {event.subtitle && (
