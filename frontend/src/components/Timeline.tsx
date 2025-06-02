@@ -62,7 +62,7 @@ const Timeline: React.FC<TimelineProps> = ({ events }) => {
         className="absolute left-8 md:left-1/2 w-1 md:w-0.5px bg-gray-300 transition-all duration-500"
         style={{
           top: lineStyle.top,
-          height: lineStyle.height * ((activeIndex + 2) / events.length),
+          height: lineStyle.height,
         }}
       ></div>
       {/* Colored (active) timeline line */}
@@ -80,7 +80,7 @@ const Timeline: React.FC<TimelineProps> = ({ events }) => {
         >
           {/* Checkpoint (dot) */}
           <div
-            ref={(el) => (dotRefs.current[index] = el)}
+            ref={(el) => { dotRefs.current[index] = el }}
             className={`absolute left-6 md:left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full border-4 border-white shadow-sm z-10 transition-all duration-300 ${
               index <= activeIndex ? "bg-indigo-500" : "bg-gray-300"
             }`}
