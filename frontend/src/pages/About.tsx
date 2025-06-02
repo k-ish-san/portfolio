@@ -1,5 +1,7 @@
+import ProfileIntro from "../components/ProfileIntro";
+import Timeline from "../components/Timeline";
 import GitHubCalendar from "react-github-calendar";
-
+import Typewriter from "typewriter-effect";
 import React from "react";
 import SkillGrid from "../components/SkillGrid";
 import { DiVisualstudio, DiMysql } from "react-icons/di";
@@ -26,7 +28,7 @@ import {
   SiRedux,
 
 } from "react-icons/si";
-import ThemeToggle from "../components/ThemeToggle";
+
 
 const skills = [
   { icon: <SiHtml5 />, label: "HTML" },
@@ -56,6 +58,7 @@ const tools = [
   { icon: <SiPerplexity />, label: "Perplexity" },
 ];
 
+
 const SectionTitle: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => (
@@ -63,13 +66,75 @@ const SectionTitle: React.FC<{ children: React.ReactNode }> = ({
     {children}
   </h2>
 );
-const About = () => {
+
+
+const About = () =>
+{
+  const events = [
+    {
+      id: "1",
+      date: "2016 – 2018",
+      title: "Nithyananda Bhavan English Medium School",
+      subtitle: "CBSE",
+      description:
+        "Completed my schooling with a focus on science and mathematics, laying the foundation for my interest in technology.",
+      grade: "10th Grade",
+      score: "Percentage: 87%",
+    },
+    {
+      id: "2",
+      date: "2018 – 2020",
+      title: "Nithyananda Bhavan English Medium School",
+      subtitle: "CBSE",
+      description:
+        "Completed my schooling with a focus on computer science and mathematics, laying the foundation for my interest in technology.",
+      grade: "12th Grade",
+      score: "Percentage: 94.2%",
+    },
+    {
+      id: "3",
+      date: "2020 – 2024",
+      title: "Government College of Engineering Kannur",
+      subtitle: "B.Tech in Electronics and Communication Engineering",
+      description:
+        "Pursuing a Bachelor's degree in Electronics and Communication Engineering, where I am honing my skills in both hardware and software development.",
+      grade: "Graduate",
+      score: "CGPA: 7.58",
+    },
+    // Add more events as needed
+  ];
+
   return (
     <div className="light:bg-white dark:bg-black light:text-black dark:text-white">
+      <ProfileIntro
+        name="Samrudh Kishsan P M"
+        title={
+          <Typewriter
+            options={{
+              strings: [
+                "Software Developer_",
+                "Frontend Developer_",
+                "MERN Stack Developer_",
+              ],
+              autoStart: true,
+              loop: true,
+              deleteSpeed: 50,
+            }}
+          />
+        }
+        location="Based in Kerala, India"
+        avatarUrl="https://res.cloudinary.com/dc4gefidz/image/upload/v1748842041/person-with-hood-that-says-evil-it_647963-12138_n93qrx.jpg"
+        description="I'm a passionate web developer who loves creating dynamic and responsive web applications. My expertise lies in front-end development using modern frameworks like React , and I have a solid understanding of back-end technologies such as Node.js and Python. I'm dedicated to crafting user-centric designs and writing clean, maintainable code. My goal is to build innovative solutions that solve real-world problems and enhance user experiences."
+      />
+      <SectionTitle>
+        My <span className="text-indigo-700">Journey</span>
+      </SectionTitle>
+      <Timeline events={events} />
+
       <div className="min-h-screen w-full px-4 py-12 font-mono relative">
         {/* Starry background can be added with a canvas or SVG here */}
         <SectionTitle>
-          Professional <span className="text-indigo-700">Skillset</span>
+          Technical <span className="text-indigo-700">Skills</span>
         </SectionTitle>
         <SkillGrid skills={skills} />
         <div className="mb-8"></div>
@@ -89,7 +154,9 @@ const About = () => {
               blockMargin={5}
               fontSize={16}
               colorScheme={
-                document.documentElement.classList.contains("dark") ? "dark" : "light"
+                document.documentElement.classList.contains("dark")
+                  ? "dark"
+                  : "light"
               }
             />
           </div>

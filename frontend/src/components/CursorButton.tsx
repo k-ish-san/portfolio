@@ -15,7 +15,7 @@ function CursorButton () {
   return (
     <div>
       <button
-        className=" fixed bottom-5 right-5 pl-2 pt-2 bg-purple-600 text-white hover:bg-indigo-800   shadow-lg rounded-xl z-30 "
+        className="hidden md:block fixed bottom-5 right-5 pl-2 pt-2 bg-purple-600 text-white hover:bg-indigo-800   shadow-lg rounded-xl z-30 "
         onClick={toggleVisibility}
         data-tooltip-id="cursor-tooltip"
         data-tooltip-content={

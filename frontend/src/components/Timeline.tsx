@@ -1,0 +1,118 @@
+import React, { useRef, useLayoutEffect, useState } from "react";
+
+interface TimelineEvent {
+  id: string;
+  date: string;
+  title: string;
+  subtitle?: string;
+  description: string;
+  grade?: string;
+  score?: string;
+}
+
+interface TimelineProps {
+  events: TimelineEvent[];
+}
+
+const Timeline: React.FC<TimelineProps> = ({ events }) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const dotRefs = useRef<Array<HTMLDivElement | null>>([]);
+  const [lineStyle, setLineStyle] = useState<{ top: number; height: number }>({
+    top: 0,
+    height: 0,
+  });
+  const [activeIndex, setActiveIndex] = useState<number>(-1);
+
+  // Animate active checkpoint (demo)
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev === events.length - 1 ? -1 : prev + 1));
+    }, 2000);
+    return () => clearInterval(interval);
+  }, [events.length]);
+
+  // Calculate line position and height
+  useLayoutEffect(() => {
+    if (dotRefs.current.length >= 2 && containerRef.current) {
+      const firstDot = dotRefs.current[0];
+      const lastDot = dotRefs.current[dotRefs.current.length - 1];
+      if (firstDot && lastDot) {
+        const containerRect = containerRef.current.getBoundingClientRect();
+        const firstRect = firstDot.getBoundingClientRect();
+        const lastRect = lastDot.getBoundingClientRect();
+        const top = firstRect.top - containerRect.top + firstRect.height / 2;
+        const height =
+          lastRect.top -
+          firstRect.top +
+          lastRect.height / 2 -
+          firstRect.height / 2;
+        setLineStyle({ top, height });
+      }
+    }
+  }, [events.length]);
+
+  return (
+    <div
+      className="relative bg-blue-50 dark:bg-gray-900 w-full px-2 md:px-8 py-8 md:py-8"
+      ref={containerRef}
+    >
+      {/* Timeline Line: Only between first and last dot */}
+      <div
+        className="absolute left-8 md:left-1/2 w-0.5 md:w-px bg-gray-300 transition-all duration-500"
+        style={{
+          top: lineStyle.top,
+          height: lineStyle.height,
+        }}
+      ></div>
+      {/* Colored (active) timeline line */}
+      <div
+        className="absolute left-8 md:left-1/2 w-0.5 md:w-px bg-indigo-500 transition-all duration-500 ease-in-out"
+        style={{
+          top: lineStyle.top,
+          height: lineStyle.height * ((activeIndex + 1) / events.length),
+        }}
+      ></div>
+      {events.map((event, index) => (
+        <div
+          key={event.id}
+          className="relative flex flex-col md:flex-row mb-10 md:mb-16"
+        >
+          {/* Checkpoint (dot) */}
+          <div
+            ref={(el) => (dotRefs.current[index] = el)}
+            className={`absolute left-6 md:left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full border-4 border-white shadow-sm z-10 transition-all duration-300 ${
+              index <= activeIndex ? "bg-indigo-500" : "bg-gray-300"
+            }`}
+          ></div>
+          {/* Event card */}
+          <div
+            className={`mt-2 md:mt-0 ml-16 md:ml-0 md:w-5/12 px-6 py-5 rounded-lg shadow-sm bg-white ${
+              index % 2 === 0
+                ? "md:mr-auto md:pr-14 md:pl-8"
+                : "md:ml-auto md:pl-14 md:pr-8"
+            }`}
+          >
+            <div className="font-bold text-indigo-700 text-lg">
+              {event.date}
+            </div>
+            <h3 className="text-xl font-semibold text-gray-900 mb-1">
+              {event.title}
+            </h3>
+            {event.subtitle && (
+              <div className="text-gray-600 mb-2">{event.subtitle}</div>
+            )}
+            {event.grade && (
+              <div className="text-gray-600 mb-2">{event.grade}</div>
+            )}
+            {event.score && (
+              <div className="text-gray-600 mb-2">{event.score}</div>
+            )}
+            <p className="text-gray-700 leading-relaxed">{event.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default Timeline;
