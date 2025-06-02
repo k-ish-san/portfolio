@@ -17,7 +17,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   github,
   live,
 }) => (
-  <div className="dark:bg-gradient-to-r from-gray-900 to-indigo-900 light:bg-gray-100 dark:text-white light:text-black rounded-xl shadow-md p-4 flex flex-col h-full transition-transform hover:scale-[1.03]">
+  <div className=" light:bg-gray-100 backdrop-blur-sm border shadow-xl border-white/20 bg-clip-padding dark:text-white light:text-black rounded-xl  p-4 flex flex-col h-full transition-transform hover:scale-[1.03]">
     <img
       src={image}
       alt={title}
@@ -35,12 +35,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         </span>
       ))}
     </div>
-    <div className="mt-auto flex gap-4">
+    <div className="mt-auto flex gap-4 font-semibold">
       <a
         href={github}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center gap-1 text-blue-600 hover:underline"
+        className="flex items-center gap-1 text-blue-200 hover:underline"
       >
         <FaGithub /> GitHub
       </a>
@@ -48,7 +48,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         href={live}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center gap-1 text-blue-600 hover:underline"
+        className="flex items-center gap-1 text-blue-200 hover:underline"
       >
         <FaExternalLinkAlt /> Live
       </a>

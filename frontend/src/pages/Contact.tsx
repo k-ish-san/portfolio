@@ -50,11 +50,11 @@ const ContactPage: React.FC = () => {
   const prevStep = () => setStep(step - 1);
 
   return (
-    <div className="min-h-screen w-full bg-gradient-to-b from-indigo-900 to-purple-900 text-white px-4 py-12 flex flex-col items-center justify-center">
+    <div className="min-h-screen w-full light:bg-blue-50 dark:bg-gradient-to-b from-indigo-900 to-purple-900 dark:text-white border-b-1 dark:border-white px-4 py-12 flex flex-col items-center justify-center">
       {/* Glassmorphism Card */}
       <div className="max-w-4xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Contact Form */}
-        <div className="rounded-2xl p-8 shadow-xl bg-white/10 backdrop-blur-sm border border-white/20 bg-clip-padding">
+        <div className="rounded-2xl p-8 shadow-xl dark:bg-white/10 backdrop-blur-sm border dark:border-white/20 bg-clip-padding">
           <h2 className="text-3xl font-bold mb-6">Contact Me</h2>
           {isSubmitted ? (
             <div className="text-center py-8">
@@ -104,7 +104,7 @@ const ContactPage: React.FC = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full p-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/50"
+                      className="w-full p-3 rounded-lg dark:bg-white/20 border dark:border-white/30 dark:text-white placeholder-white/50"
                       placeholder="Your Name"
                     />
                   </div>
@@ -118,7 +118,7 @@ const ContactPage: React.FC = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full p-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/50"
+                      className="w-full p-3 rounded-lg dark:bg-white/20 border dark:border-white/30 dark:text-white placeholder-white/50"
                       placeholder="your@email.com"
                     />
                   </div>
@@ -131,7 +131,7 @@ const ContactPage: React.FC = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full p-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-white/50"
+                      className="w-full p-3 rounded-lg dark:bg-white/20 border dark:border-white/30 dark:text-white placeholder-white/50"
                       placeholder="+1 (123) 456-7890"
                     />
                   </div>
@@ -139,14 +139,14 @@ const ContactPage: React.FC = () => {
                     <button
                       type="button"
                       onClick={prevStep}
-                      className="w-1/2 py-3 px-4 bg-gray-600 hover:bg-gray-700 rounded-lg font-medium transition-colors"
+                      className="w-1/2 py-3 px-4 bg-gray-600 hover:bg-gray-700 light:text-white rounded-lg font-medium transition-colors"
                     >
                       Back
                     </button>
                     <button
                       type="button"
                       onClick={nextStep}
-                      className="w-1/2 py-3 px-4 bg-indigo-600 hover:bg-indigo-700 rounded-lg font-medium transition-colors"
+                      className="w-1/2 py-3 px-4 bg-indigo-600 hover:bg-indigo-700 light:text-white rounded-lg font-medium transition-colors"
                     >
                       Next
                     </button>
@@ -173,7 +173,7 @@ const ContactPage: React.FC = () => {
                     <button
                       type="button"
                       onClick={prevStep}
-                      className="w-1/2 py-3 px-4 bg-gray-600 hover:bg-gray-700 rounded-lg font-medium transition-colors"
+                      className="w-1/2 py-3 px-4 dark:bg-gray-600 dark:hover:bg-gray-700 rounded-lg font-medium transition-colors"
                     >
                       Back
                     </button>
@@ -191,7 +191,7 @@ const ContactPage: React.FC = () => {
         </div>
 
         {/* Contact Info & Socials */}
-        <div className="rounded-2xl p-8 shadow-xl bg-white/10 backdrop-blur-sm border border-white/20 bg-clip-padding flex flex-col justify-between">
+        <div className="rounded-2xl p-8 shadow-xl dark:bg-white/10 dark:backdrop-blur-sm border dark:border-white/20 bg-clip-padding flex flex-col justify-between">
           <div>
             <h2 className="text-3xl font-bold mb-6">Get In Touch</h2>
             <div className="space-y-4">

@@ -62,7 +62,7 @@ const tools = [
 const SectionTitle: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => (
-  <h2 className="text-3xl md:text-4xl font-bold font-mono text-center mb-8">
+  <h2 className="text-3xl md:text-4xl font-bold font-mono text-center my-8">
     {children}
   </h2>
 );
@@ -105,7 +105,7 @@ const About = () =>
   ];
 
   return (
-    <div className="light:bg-white dark:bg-black light:text-black dark:text-white">
+    <div className="light:bg-white dark:bg-black light:text-black dark:text-white border-b-1 dark:border-white">
       <ProfileIntro
         name="Samrudh Kishsan P M"
         title={

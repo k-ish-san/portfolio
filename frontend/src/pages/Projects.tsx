@@ -108,7 +108,7 @@ const ProjectGallery: React.FC = () => {
     filter === "All" ? projects : projects.filter((p) => p.category === filter);
 
   return (
-    <div className="mx-auto px-15 py-15 dark:bg-black light:bg-white">
+    <div className="mx-auto px-15 py-15 dark:bg-gradient-to-b from-indigo-900 to-purple-900 light:bg-white">
       <div className="flex items-center gap-4 mb-6">
         <h1 className="text-3xl font-bold font-mono dark:text-white light:text-black">Projects</h1>
         <span className="bg-indigo-500 text-white px-2 border-2 border-indigo-900">{filteredProjects.length}</span>
