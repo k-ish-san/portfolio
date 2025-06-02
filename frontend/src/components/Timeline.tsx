@@ -53,10 +53,10 @@ const Timeline: React.FC<TimelineProps> = ({ events }) => {
 
   return (
     <div
-      className="relative bg-blue-50 dark:bg-gray-900 w-full px-2 md:px-8 py-8 md:py-8"
+      className="relative bg-blue-50 dark:bg-gray-900 w-full px-2 md:px-8 py-4 md:py-6"
       ref={containerRef}
     >
-      {/* Timeline Line: Only between first and last dot */}
+      {/* Vertical Timeline Line: Only between first and last dot */}
       <div
         className="absolute left-8 md:left-1/2 w-0.5 md:w-px bg-gray-300 transition-all duration-500"
         style={{
@@ -75,7 +75,7 @@ const Timeline: React.FC<TimelineProps> = ({ events }) => {
       {events.map((event, index) => (
         <div
           key={event.id}
-          className="relative flex flex-col md:flex-row mb-10 md:mb-16"
+          className="relative flex flex-col md:flex-row mb-8 md:mb-10"
         >
           {/* Checkpoint (dot) */}
           <div
@@ -84,9 +84,11 @@ const Timeline: React.FC<TimelineProps> = ({ events }) => {
               index <= activeIndex ? "bg-indigo-500" : "bg-gray-300"
             }`}
           ></div>
+          {/* Horizontal connector (mobile only) */}
+          <div className="absolute left-[3.25rem] md:hidden w-10 h-0.5 top-3 bg-gray-300"></div>
           {/* Event card */}
           <div
-            className={`mt-2 md:mt-0 ml-16 md:ml-0 md:w-5/12 px-6 py-5 rounded-lg shadow-sm bg-white ${
+            className={`mt-2 md:-mt-2 ml-16 md:ml-0 md:w-5/12 px-6 py-4 rounded-lg shadow-sm bg-white ${
               index % 2 === 0
                 ? "md:mr-auto md:pr-14 md:pl-8"
                 : "md:ml-auto md:pl-14 md:pr-8"
