@@ -1,6 +1,6 @@
 import React from "react";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
-import { IconType } from "react-icons";
+
 
 interface ProjectCardProps {
   image: string;
