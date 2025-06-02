@@ -9,11 +9,11 @@ function Home()
 {
   return (
     <div
-      className="relative flex flex-col items-center justify-center h-screen light:bg-gray-100 dark:bg-black overflow-hidden "
+      className="relative flex flex-col items-center justify-center h-screen bg-black overflow-hidden "
       style={{ zIndex: -1 }}
     >
       {localStorage.getItem("theme") === "dark" ? (
-        < div style={{ width: "100%", height: "100%", position: "relative" }}>
+      < div style={{ width: "100%", height: "100%", position: "relative" }}>
       <Orb
         hoverIntensity={5}
         rotateOnHover={false}
@@ -25,8 +25,8 @@ function Home()
 
     < div className = "absolute inset-0 pointer-events-none" >
       <Waves
-        lineColor="rgba(255, 255, 255, 0.5)"
-        backgroundColor="rgba(255, 255, 255, 0.2)"
+        lineColor="rgba(15, 25, 125, 0.8)"
+        backgroundColor="rgba(255, 255, 255, 0.9)"
         waveSpeedX={0.02}
         waveSpeedY={0.01}
         waveAmpX={40}
