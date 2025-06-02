@@ -16,8 +16,8 @@ interface TimelineProps {
 
 const Timeline: React.FC<TimelineProps> = ({ events }) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const dotRefs = useRef<Array<HTMLDivElement | null>>([]);
-  
+  const dotRefs = useRef<(HTMLDivElement | null)[]>([]);
+
   const [lineStyle, setLineStyle] = useState<{ top: number; height: number }>({
     top: 0,
     height: 0,
