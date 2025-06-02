@@ -28,7 +28,7 @@ const Navbar: React.FC = () => {
           >
             <li>
               <Link
-                to="/home"
+                to="/"
                 className="px-3 py-2 rounded-md font-medium"
                 data-tooltip-id="home-tooltip"
                 data-tooltip-content="Home"
@@ -78,13 +78,12 @@ const Navbar: React.FC = () => {
               <ThemeToggle />
             </li>
           </ul>
+
           <Tooltip id="home-tooltip" style={{ fontVariant: "small-caps" }} />
           <Tooltip id="about-tooltip" style={{ fontVariant: "small-caps" }} />
-          <Tooltip
-            id="projects-tooltip"
-            style={{ fontVariant: "small-caps" }}
-          />
+          <Tooltip id="projects-tooltip"  style={{ fontVariant: "small-caps" }}/>
           <Tooltip id="contact-tooltip" style={{ fontVariant: "small-caps" }} />
+         
         </div>
       </nav>
 
@@ -98,6 +97,9 @@ const Navbar: React.FC = () => {
               activeLink === "/home" ? "scale-125" : "scale-100"
             }hover:scale-110 hover:bg-indigo-500`}
             onClick={() => handleLinkClick("/home")}
+            data-tooltip-id="home-tooltip"
+            data-tooltip-content="Home"
+            data-tooltip-place="top"
           >
             <HomeIcon className="w-6 h-6" />
             <span className="text-xs">Home</span>
@@ -109,6 +111,9 @@ const Navbar: React.FC = () => {
               activeLink === "/about" ? "scale-125" : "scale-100"
             }hover:scale-110 hover:bg-indigo-500`}
             onClick={() => handleLinkClick("/about")}
+            data-tooltip-id="about-tooltip"
+            data-tooltip-content="About"
+            data-tooltip-place="top"  
           >
             <UserIcon className="w-6 h-6" />
             <span className="text-xs">About</span>
@@ -120,6 +125,9 @@ const Navbar: React.FC = () => {
               activeLink === "/projects" ? "scale-125" : "scale-100"
             }hover:scale-110 hover:bg-indigo-500`}
             onClick={() => handleLinkClick("/projects")}
+            data-tooltip-id="projects-tooltip"
+            data-tooltip-content="Projects"
+            data-tooltip-place="top"
           >
             <BookOpenIcon className="w-6 h-6" />
             <span className="text-xs">Projects</span>
@@ -131,6 +139,9 @@ const Navbar: React.FC = () => {
               activeLink === "/contact" ? "scale-125" : "scale-100"
             }hover:scale-110 hover:bg-indigo-500`}
             onClick={() => handleLinkClick("/contact")}
+            data-tooltip-id="contact-tooltip"
+            data-tooltip-content="Contact"
+            data-tooltip-place="top"
           >
             <PhoneIcon className="w-6 h-6" />
             <span className="text-xs">Contact</span>
@@ -138,7 +149,6 @@ const Navbar: React.FC = () => {
           {/* Theme Toggle */}
           <button
             className="flex flex-col items-center justify-center w-full h-full hover:scale-110 hover:bg-indigo-500"
-            
           >
             <ThemeToggle />
             <span className="text-xs">Theme</span>
