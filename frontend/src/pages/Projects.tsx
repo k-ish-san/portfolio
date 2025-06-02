@@ -4,6 +4,7 @@ import ProjectCard from "../components/ProjectCard";
 import {
   SiReact,
   SiFirebase,
+ 
   SiNpm,
   SiHtml5,
   SiCss3,
@@ -11,9 +12,10 @@ import {
   SiImdb ,
   SiArduino,
   SiRaspberrypi,
-
-  SiVercel,
  
+  SiVercel,
+  
+
 
  // SiFigma,
   SiTailwindcss,
