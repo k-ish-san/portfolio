@@ -1,5 +1,6 @@
 // src/components/ProfileIntro.tsx
 import React from "react";
+import Button from "./Button";
 
 
 interface ProfileIntroProps {
@@ -24,10 +25,21 @@ const ProfileIntro: React.FC<ProfileIntroProps> = ({
       className="w-24 h-24 rounded-lg object-cover bg-gray-200"
     />
     <div>
-      <h1 className="text-2xl font-bold text-indigo-600 dark:text-indigo-500 font-mono">{name}</h1>
-      <div className="light:text-violet-600 dark:text-indigo-600 font-medium font-sans">{title}</div>
-      <div className="light:text-indigo-600 dark:text-indigo-300 mb-4">{location}</div>
-      <p className="light:text-gray-700 dark:text-white leading-relaxed">{description}</p>
+      <h1 className="text-2xl font-bold text-indigo-600 dark:text-indigo-500 font-mono">
+        {name}
+      </h1>
+      <div className="light:text-violet-600 dark:text-indigo-600 font-medium font-sans">
+        {title}
+      </div>
+      <div className="light:text-indigo-600 dark:text-indigo-300 mb-4">
+        {location}
+      </div>
+      <p className="light:text-gray-700 dark:text-white leading-relaxed mb-4">
+        {description}
+      </p>
+      <Button
+          text="Download Resume"
+         />
     </div>
   </div>
 );
