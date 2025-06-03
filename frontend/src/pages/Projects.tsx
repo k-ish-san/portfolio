@@ -141,17 +141,21 @@ const ProjectGallery: React.FC = () => {
   return (
     <div className="mx-auto px-15 py-15 dark:bg-gradient-to-b from-indigo-900 to-purple-900 light:bg-white">
       <div className="flex items-center gap-4 mb-6">
-        <h1 className="text-3xl font-bold font-mono dark:text-white light:text-black">Projects</h1>
-        <span className="bg-indigo-500 text-white px-2 border-2 border-indigo-900">{filteredProjects.length}</span>
+        <h1 className="text-3xl font-bold font-mono dark:text-white light:text-black">
+          Projects
+        </h1>
+        <span className="bg-[#3aa5fd] rounded-sm text-white px-2 border-2 border-indigo-200">
+          {filteredProjects.length}
+        </span>
       </div>
       <div className="flex gap-2 mb-8">
         {categories.map((cat) => (
           <button
             key={cat}
-            className={`px-4 py-2 rounded-full border ${
+            className={`px-4 py-2 rounded-sm border ${
               filter === cat
-                ? "bg-indigo-500 text-white border-indigo-500"
-                : "bg-white text-gray-500 border-gray-300"
+                ? "bg-[#3aa5fd] text-white border-[#3aa5fd]"
+                : "bg-white text-gray-500 border-[#3aa5fd]"
             } font-semibold transition`}
             onClick={() => setFilter(cat)}
           >

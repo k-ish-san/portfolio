@@ -26,7 +26,7 @@ function CursorButton () {
         <div className="relative h-12 w-12  ">
           <svg
             className="absolute inset-0 z-30 "
-            width="48"
+            width="48"   
             height="48"
             viewBox="0 0 48 48"
             fill="white"

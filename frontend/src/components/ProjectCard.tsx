@@ -28,7 +28,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       {tags.map((tag, idx) => (
         <span
           key={tag.label + idx}
-          className="flex items-center gap-1 light:bg-blue-100 light:text-black dark:bg-indigo-500 dark:text-white px-3 py-1 rounded-full text-xs font-semibold"
+          className="flex items-center gap-1 light:bg-blue-200 light:text-black dark:bg-indigo-500 dark:text-white px-3 py-1 rounded-full text-xs font-semibold"
         >
           {tag.icon && <tag.icon className="text-base" />}
           {tag.label}
@@ -40,7 +40,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         href={github}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center gap-1 dark:text-blue-200 hover:underline"
+        className="flex items-center gap-1 dark:text-[#3aa5fd] hover:underline"
       >
         <FaGithub /> GitHub
       </a>
@@ -48,7 +48,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         href={live}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center gap-1 dark:text-blue-200 hover:underline"
+        className="flex items-center gap-1 dark:text-[#3aa5fd] hover:underline"
       >
         <FaExternalLinkAlt /> Live
       </a>
