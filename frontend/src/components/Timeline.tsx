@@ -67,7 +67,7 @@ const Timeline: React.FC<TimelineProps> = ({ events }) => {
       ></div>
       {/* Colored (active) timeline line */}
       <div
-        className="absolute left-8 md:left-1/2 w-0.5 md:w-0.5px bg-indigo-500 transition-all duration-500 ease-in-out"
+        className="absolute left-8 md:left-1/2 w-0.5 md:w-0.5px shadow-sm shadow-indigo-500 bg-indigo-500 transition-all duration-500 ease-in-out"
         style={{
           top: lineStyle.top,
           height: lineStyle.height * ((activeIndex + 2) / events.length),
@@ -106,7 +106,7 @@ const Timeline: React.FC<TimelineProps> = ({ events }) => {
 
           {/* Event card */}
           <div
-            className={`mt-2 md:-mt-2 ml-16 md:ml-0 md:w-5/12 px-6 py-4 rounded-lg shadow-xl border-2 light:border-black/20 dark:border-white/20 light:bg-blue-50 dark:bg-gradient-to-r from-indigo-900 to-purple-900  ${
+            className={`mt-2 md:-mt-2 ml-16 md:ml-0 md:w-5/12 px-6 py-4 rounded-lg shadow-lg transition-all light:shadow-[#3aa5fd] border-2 light:border-[#3aa5fd]/20 dark:border-white/20 light:bg-white dark:bg-gradient-to-r from-indigo-900 to-purple-900  ${
               index % 2 === 0
                 ? "md:mr-auto md:pr-14 md:pl-8"
                 : "md:ml-auto md:pl-14 md:pr-8"

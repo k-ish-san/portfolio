@@ -15,18 +15,18 @@ function CursorButton () {
   return (
     <div>
       <button
-        className="hidden md:block fixed bottom-5 right-5 pl-2 pt-2 bg-purple-600 text-white hover:bg-indigo-800   shadow-lg rounded-xl z-30 "
+        className="hidden md:block fixed bottom-5 right-5 pl-2 pt-2 bg-[#3aa5fd] text-white hover:bg-indigo-800   shadow-lg rounded-xl z-30 "
         onClick={toggleVisibility}
         data-tooltip-id="cursor-tooltip"
         data-tooltip-content={
           isVisible ? "Magic Cursor ON" : "Magic Cursor OFF"
         }
-        data-tooltip-place="left"
+        data-tooltip-place="top"
       >
         <div className="relative h-12 w-12  ">
           <svg
             className="absolute inset-0 z-30 "
-            width="48"   
+            width="48"
             height="48"
             viewBox="0 0 48 48"
             fill="white"
@@ -54,14 +54,21 @@ function CursorButton () {
             />
           </svg>
           {isVisible ? (
-            <SparklesIcon className="absolute right-6 top-0 h-6 w-6 text-white z-20" />
+            <SparklesIcon className="absolute right-6 top-0 h-6 w-6 text-amber-200 z-20" />
           ) : (
             ""
           )}
         </div>
       </button>
       {isVisible && <SplashCursor />}
-      <Tooltip id="cursor-tooltip" />
+      <Tooltip
+        id="cursor-tooltip"
+        style={{
+          fontVariant: "small-caps",
+          letterSpacing: "0.1em",
+          zIndex: "100",
+        }}
+      />
     </div>
   );
 }

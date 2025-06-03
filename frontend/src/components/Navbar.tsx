@@ -99,13 +99,22 @@ const Navbar: React.FC = () => {
             </li>
           </ul>
 
-          <Tooltip id="home-tooltip" style={{ fontVariant: "small-caps" }} />
-          <Tooltip id="about-tooltip" style={{ fontVariant: "small-caps" }} />
+          <Tooltip
+            id="home-tooltip"
+            style={{ fontVariant: "small-caps", letterSpacing: "0.1em", zIndex: "100" }}
+          />
+          <Tooltip
+            id="about-tooltip"
+            style={{ fontVariant: "small-caps", letterSpacing: "0.1em", zIndex: "100" }}
+          />
           <Tooltip
             id="projects-tooltip"
-            style={{ fontVariant: "small-caps" }}
+            style={{ fontVariant: "small-caps", letterSpacing: "0.1em", zIndex: "100" }}
           />
-          <Tooltip id="contact-tooltip" style={{ fontVariant: "small-caps" }} />
+          <Tooltip
+            id="contact-tooltip"
+            style={{ fontVariant: "small-caps",letterSpacing: "0.1em", zIndex: "100" }}
+          />
         </div>
       </nav>
 

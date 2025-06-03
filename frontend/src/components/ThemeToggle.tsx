@@ -39,8 +39,8 @@ const ThemeToggle = () => {
           />
         )}
       </button>
-      <Tooltip id="light-tooltip" />
-      <Tooltip id="dark-tooltip" />
+      <Tooltip id="light-tooltip" style={{ zIndex: "100" }} />
+      <Tooltip id="dark-tooltip" style={{  zIndex: "100" }} />
     </div>
   );
 };

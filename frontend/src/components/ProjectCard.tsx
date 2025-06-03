@@ -17,7 +17,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   github,
   live,
 }) => (
-  <div className=" light:bg-gray-100  border-2 shadow-xl light:border-black/20 dark:border-white/20 bg-clip-padding dark:text-white light:text-black rounded-xl  p-4 flex flex-col h-full transition-transform hover:scale-[1.03]">
+  <div className=" light:bg-gray-100  border-2 shadow-lg light:shadow-[#3aa5fd] dark:shadow-black light:border-[#3aa5fd]/20 dark:border-white/20 bg-clip-padding dark:text-white light:text-black rounded-xl  p-4 flex flex-col h-full transition-transform hover:scale-[1.03]">
     <img
       src={image}
       alt={title}
@@ -28,7 +28,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       {tags.map((tag, idx) => (
         <span
           key={tag.label + idx}
-          className="flex items-center gap-1 light:bg-blue-200 light:text-black dark:bg-indigo-500 dark:text-white px-3 py-1 rounded-full text-xs font-semibold"
+          className="flex items-center gap-1 light:bg-[#3aa5fd] light:text-gray-200 dark:bg-indigo-500 dark:text-white px-3 py-1 rounded-full text-xs font-semibold"
         >
           {tag.icon && <tag.icon className="text-base" />}
           {tag.label}
