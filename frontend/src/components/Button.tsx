@@ -12,7 +12,7 @@ const Button: React.FC<ButtonProps> = ({ text, children }) => {
 
   return (
     <button
-      className="group relative font-boldtext-sm transition-all duration-150 ease-in-out"
+      className="group relative font-bold text-sm transition-all duration-150 ease-in-out"
       data-tooltip-id="button-tooltip"
       data-tooltip-place="bottom"
       data-tooltip-content="Resume"
