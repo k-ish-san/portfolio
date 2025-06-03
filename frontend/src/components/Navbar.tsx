@@ -10,7 +10,7 @@ import {
 } from "@heroicons/react/24/solid";
 
 const Navbar: React.FC = () => {
-  const [activeLink, setActiveLink] = useState("/home");
+  const [activeLink, setActiveLink] = useState("/");
 
   const handleLinkClick = (to: string) => {
     setActiveLink(to);
@@ -18,21 +18,26 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      {/* Desktop Navbar (unchanged) */}
+      {/* Desktop Navbar */}
       <nav className="dark:bg-gray-900 dark:text-white shadow-md font-sans">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
           <div className="font-bold text-3xl font-mono">Portfolio</div>
           <ul
-            className="hidden md:flex space-x-4 text-2xl font-mono"
+            className="hidden md:flex space-x-2 text-2xl font-mono"
             style={{ fontVariant: "small-caps", letterSpacing: "0.1em" }}
           >
             <li>
               <Link
                 to="/"
-                className="px-3 py-2 rounded-md font-medium"
+                className={`px-3 py-2 rounded-sm font-medium transition-transform duration-200 ${
+                  activeLink === "/"
+                    ? "scale-125 light:bg-blue-100 dark:bg-indigo-500"
+                    : "scale-100"
+                } hover:scale-110 light:hover:bg-blue-100 dark:hover:bg-indigo-500 hover:shadow-lg`}
                 data-tooltip-id="home-tooltip"
                 data-tooltip-content="Home"
                 data-tooltip-place="bottom"
+                onClick={() => handleLinkClick("/")}
               >
                 <HomeIcon className="inline-block w-6 h-6 mr-1 mb-1" />
                 Home
@@ -41,10 +46,15 @@ const Navbar: React.FC = () => {
             <li>
               <Link
                 to="/about"
-                className="px-3 py-2 rounded-md font-medium"
+                className={`px-3 py-2 rounded-sm font-medium transition-transform  duration-200 ${
+                  activeLink === "/about"
+                    ? "scale-125 light:bg-blue-100 dark:bg-indigo-500"
+                    : "scale-100"
+                } hover:scale-110 light:hover:bg-blue-100 dark:hover:bg-indigo-500  hover:shadow-lg`}
                 data-tooltip-id="about-tooltip"
                 data-tooltip-content="About"
                 data-tooltip-place="bottom"
+                onClick={() => handleLinkClick("/about")}
               >
                 <UserIcon className="inline-block w-6 h-6 mr-1 mb-1" />
                 About
@@ -53,10 +63,15 @@ const Navbar: React.FC = () => {
             <li>
               <Link
                 to="/projects"
-                className="px-3 py-2 rounded-md font-medium"
+                className={`px-3 py-2 rounded-sm font-medium transition-transform  duration-200 ${
+                  activeLink === "/projects"
+                    ? "scale-125 light:bg-blue-100 dark:bg-indigo-500"
+                    : "scale-100"
+                } hover:scale-110 light:hover:bg-blue-100 dark:hover:bg-indigo-500  hover:shadow-lg`}
                 data-tooltip-id="projects-tooltip"
                 data-tooltip-content="Projects"
                 data-tooltip-place="bottom"
+                onClick={() => handleLinkClick("/projects")}
               >
                 <BookOpenIcon className="inline-block w-6 h-6 mr-1 mb-1" />
                 Projects
@@ -65,38 +80,50 @@ const Navbar: React.FC = () => {
             <li>
               <Link
                 to="/contact"
-                className="px-3 py-2 rounded-md font-medium"
+                className={`px-3 py-2 rounded-sm font-medium transition-transform duration-200 ${
+                  activeLink === "/contact"
+                    ? "scale-125 light:bg-blue-100 dark:bg-indigo-500"
+                    : "scale-100"
+                } hover:scale-110 light:hover:bg-blue-100 dark:hover:bg-indigo-500  hover:shadow-lg`}
                 data-tooltip-id="contact-tooltip"
                 data-tooltip-content="Contact"
                 data-tooltip-place="bottom"
+                onClick={() => handleLinkClick("/contact")}
               >
                 <PhoneIcon className="inline-block w-6 h-6 mr-1 mb-1" />
                 Contact
               </Link>
             </li>
-            <li className="inline-block w-6 h-6 mr-1 mt-1.5 ">
+            <li className="inline-block w-6 h-6 mr-1 mt-1.5">
               <ThemeToggle />
             </li>
           </ul>
 
           <Tooltip id="home-tooltip" style={{ fontVariant: "small-caps" }} />
           <Tooltip id="about-tooltip" style={{ fontVariant: "small-caps" }} />
-          <Tooltip id="projects-tooltip"  style={{ fontVariant: "small-caps" }}/>
+          <Tooltip
+            id="projects-tooltip"
+            style={{ fontVariant: "small-caps" }}
+          />
           <Tooltip id="contact-tooltip" style={{ fontVariant: "small-caps" }} />
-         
         </div>
       </nav>
 
       {/* Mobile Bottom Navbar */}
       <div className="md:hidden fixed bottom-0 border-t-2 border-gradient-to-r from-indigo-500 to-purple-500 left-0 right-0 bg-white dark:bg-gray-800 dark:text-white shadow-lg z-50">
-        <div className="flex justify-around items-center h-16" style={{fontVariant: "small-caps", letterSpacing: "0.1em" }} >
+        <div
+          className="flex justify-around items-center h-16"
+          style={{ fontVariant: "small-caps", letterSpacing: "0.1em" }}
+        >
           {/* Home */}
           <Link
             to="/"
-            className={`flex flex-col items-center justify-center w-full h-full transition-transform duration-200 ${
-              activeLink === "/home" ? "scale-125" : "scale-100"
-            }hover:scale-110 hover:bg-indigo-500`}
-            onClick={() => handleLinkClick("/home")}
+            className={`flex flex-col items-center justify-center w-full h-full transition-transform  duration-200 ${
+              activeLink === "/"
+                ? "scale-125 light:bg-blue-100 dark:bg-indigo-500"
+                : "scale-100"
+            } hover:scale-110 light:hover:bg-blue-100 dark:hover:bg-indigo-500 hover:shadow-lg`}
+            onClick={() => handleLinkClick("/")}
             data-tooltip-id="home-tooltip"
             data-tooltip-content="Home"
             data-tooltip-place="top"
@@ -107,13 +134,15 @@ const Navbar: React.FC = () => {
           {/* About */}
           <Link
             to="/about"
-            className={`flex flex-col items-center justify-center w-full h-full transition-transform duration-200 ${
-              activeLink === "/about" ? "scale-125" : "scale-100"
-            }hover:scale-110 hover:bg-indigo-500`}
+            className={`flex flex-col items-center justify-center w-full h-full transition-transform  duration-200 ${
+              activeLink === "/about"
+                ? "scale-125 light:bg-blue-100 dark:bg-indigo-500"
+                : "scale-100"
+            } hover:scale-110 light:hover:bg-blue-100 dark:hover:bg-indigo-500 hover:shadow-lg`}
             onClick={() => handleLinkClick("/about")}
             data-tooltip-id="about-tooltip"
             data-tooltip-content="About"
-            data-tooltip-place="top"  
+            data-tooltip-place="top"
           >
             <UserIcon className="w-6 h-6" />
             <span className="text-xs">About</span>
@@ -121,9 +150,11 @@ const Navbar: React.FC = () => {
           {/* Projects */}
           <Link
             to="/projects"
-            className={`flex flex-col items-center justify-center w-full h-full transition-transform duration-200 ${
-              activeLink === "/projects" ? "scale-125" : "scale-100"
-            }hover:scale-110 hover:bg-indigo-500`}
+            className={`flex flex-col items-center justify-center w-full h-full transition-transform  duration-200 ${
+              activeLink === "/projects"
+                ? "scale-125 light:bg-blue-100 dark:bg-indigo-500"
+                : "scale-100"
+            } hover:scale-110 light:hover:bg-blue-100 dark:hover:bg-indigo-500 hover:shadow-lg`}
             onClick={() => handleLinkClick("/projects")}
             data-tooltip-id="projects-tooltip"
             data-tooltip-content="Projects"
@@ -135,9 +166,11 @@ const Navbar: React.FC = () => {
           {/* Contact */}
           <Link
             to="/contact"
-            className={`flex flex-col items-center justify-center w-full h-full transition-transform duration-200 ${
-              activeLink === "/contact" ? "scale-125" : "scale-100"
-            }hover:scale-110 hover:bg-indigo-500`}
+            className={`flex flex-col items-center justify-center w-full h-full transition-transform  duration-200 ${
+              activeLink === "/contact"
+                ? "scale-125 light:bg-blue-100 dark:bg-indigo-500"
+                : "scale-100"
+            } hover:scale-110 light:hover:bg-blue-100 dark:hover:bg-indigo-500 hover:shadow-lg`}
             onClick={() => handleLinkClick("/contact")}
             data-tooltip-id="contact-tooltip"
             data-tooltip-content="Contact"
@@ -147,11 +180,8 @@ const Navbar: React.FC = () => {
             <span className="text-xs">Contact</span>
           </Link>
           {/* Theme Toggle */}
-          <button
-            className="flex flex-col items-center justify-center w-full h-full hover:scale-110 hover:bg-indigo-500"
-          >
+          <button className="flex flex-col items-center justify-center w-full h-full">
             <ThemeToggle />
-            <span className="text-xs">Theme</span>
           </button>
         </div>
       </div>

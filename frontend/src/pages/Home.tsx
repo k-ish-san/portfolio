@@ -82,7 +82,7 @@ function Home() {
       {/* Text */}
       <div className="absolute flex flex-col items-center justify-center w-full h-full z-10">
         {/* HELLO row */}
-        <div className="flex gap-1 md:gap-5 mb-2 md:mb-5">
+        <div className="flex gap-2 md:gap-5 mb-2 md:mb-5">
           {hello.map((letter, index) => (
             <motion.div
               key={`hello-${index}`}
@@ -106,7 +106,7 @@ function Home() {
           ))}
         </div>
         {/* WORLD row */}
-        <div className="flex gap-1 md:gap-5 mb-2 md:mb-5">
+        <div className="flex gap-2 md:gap-5 mb-2 md:mb-5">
           {world.map((letter, index) => (
             <motion.div
               key={`world-${index}`}
