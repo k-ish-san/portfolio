@@ -10,12 +10,26 @@ const Button: React.FC<ButtonProps> = ({ text, children }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isActive, setIsActive] = useState(false);
 
+ 
+  const handleDownload = () => {
+    const pdfName = "SAMRUDH_RESUME.pdf";
+    const fileUrl = `/src/assets/${pdfName}`;
+
+    const link = document.createElement("a");
+    link.href = fileUrl;
+    link.setAttribute("download", pdfName);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+    
   return (
     <button
       className="group relative font-bold text-sm transition-all duration-150 ease-in-out"
       data-tooltip-id="button-tooltip"
       data-tooltip-place="bottom"
-      data-tooltip-content="Resume"
+          data-tooltip-content="Resume"
+          onClick={handleDownload}
       style={{
         appearance: "none",
         background: "none",
