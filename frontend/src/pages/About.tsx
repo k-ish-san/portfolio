@@ -147,19 +147,20 @@ const About = () =>
           <SectionTitle>
             Days I <span className="text-indigo-700">Code</span>
           </SectionTitle>
-          <div className="w-full max-w-4xl px-4">
-            <GitHubCalendar
-              username="k-ish-san"
-              blockSize={15}
-              blockMargin={5}
-              fontSize={16}
-              colorScheme={
-                document.documentElement.classList.contains("dark")
-                  ? "dark"
-                  : "light"
-              }
-            />
+           {/* 📆 GitHub Calendar */}
+        <div className="flex flex-col items-center font-sans dark:text-white col-span-full">
+          <div className="text-2xl font-orbitron font-bold mb-4">
+            GitHub Calendar
           </div>
+          <GitHubCalendar
+            username="k-ish-san"
+            blockSize={14}
+            blockMargin={4}
+            fontSize={14}
+            showWeekdayLabels={true}
+            colorScheme="dark"
+          />
+        </div>
         </div>
       </div>
     </div>
